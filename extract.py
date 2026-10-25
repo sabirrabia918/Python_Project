@@ -10,7 +10,7 @@ def fetch_launches():
             timeout=30,
         )
         if r.status_code == 429:
-            print("Rate limit hit, jitna data mila utna save kar rahe hain")
+            print("Rate limit reached. Saving the data collected so far.")
             break
         r.raise_for_status()
         data = r.json()
